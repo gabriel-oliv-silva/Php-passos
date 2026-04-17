@@ -55,7 +55,7 @@ Cada projeto está organizado em sua própria pasta, contendo:
 Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/gabriel-oliv-silva/nome-repositorio.git
 
 ```
 
