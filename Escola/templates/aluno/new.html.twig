@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Novo Aluno{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-success text-white">
+            <h4 class="mb-0">➕ Novo Aluno</h4>
+        </div>
+
+        <div class="card-body">
+            {{ include('aluno/_form.html.twig', {'button_label': 'Salvar'}) }}
+        </div>
+
+        <div class="card-footer">
+            <a href="{{ path('app_aluno_index') }}" class="btn btn-secondary">
+                ⬅ Voltar
+            </a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar Aluno{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-warning">
+            <h4 class="mb-0">✏ Editar Aluno</h4>
+        </div>
+
+        <div class="card-body">
+            {{ include('aluno/_form.html.twig', {'button_label': 'Atualizar'}) }}
+        </div>
+
+        <div class="card-footer d-flex justify-content-between">
+            <a href="{{ path('app_aluno_index') }}" class="btn btn-secondary">
+                ⬅ Voltar
+            </a>
+
+            {{ include('aluno/_delete_form.html.twig') }}
+        </div>
+    </div>
+
+</div>
+{% endblock %}

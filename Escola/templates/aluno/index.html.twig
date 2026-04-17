@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alunos{% endblock %}
+
+{% block body %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0">📋 Alunos</h2>
+
+    <a href="{{ path('app_aluno_new') }}" class="btn btn-success">
+        ➕ Novo Aluno
+    </a>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0 align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Email</th>
+                    <th class="text-end">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for aluno in alunos %}
+                <tr>
+                    <td>{{ aluno.id }}</td>
+                    <td><strong>{{ aluno.nome }}</strong></td>
+                    <td>{{ aluno.idade }}</td>
+                    <td>{{ aluno.email ?: '—' }}</td>
+                    <td class="text-end">
+                        <a href="{{ path('app_aluno_show', {'id': aluno.id}) }}" class="btn btn-sm btn-outline-primary">
+                            👁
+                        </a>
+
+                        <a href="{{ path('app_aluno_edit', {'id': aluno.id}) }}" class="btn btn-sm btn-outline-warning">
+                            ✏
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5" class="text-center py-4 text-muted">
+                        Nenhum aluno encontrado 😢
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
